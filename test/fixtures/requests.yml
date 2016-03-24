@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  orderNo: 1
+  purchaseDate: 2016-03-24
+  companyName: MyString
+  quantity: 1
+  cost: 1
+  deliveryDate: 2016-03-24
+
+two:
+  orderNo: 1
+  purchaseDate: 2016-03-24
+  companyName: MyString
+  quantity: 1
+  cost: 1
+  deliveryDate: 2016-03-24
