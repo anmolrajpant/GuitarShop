@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324115241) do
+ActiveRecord::Schema.define(version: 20160329112316) do
+
+  create_table "items", force: :cascade do |t|
+    t.integer  "itemCode"
+    t.string   "make"
+    t.string   "model"
+    t.string   "color"
+    t.integer  "selingPrice"
+    t.boolean  "condition"
+    t.string   "orderNo"
+    t.integer  "rackNo"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "requests", force: :cascade do |t|
     t.integer  "orderNo"
