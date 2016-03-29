@@ -1,2 +1,39 @@
 <h1>Item#new</h1>
 <p>Find me in app/views/item/new.html.erb</p>
+<%= form_for :item, url: {action: "create"} do |f| %>
+	<p>
+		<%= f.label ("Guitar ID:") %>
+		<%= f.text_field :itemCode %>
+	</p>
+	<p>
+		<%= f.label ("Make:") %>
+		<%= f.text_field :make %>
+	</p>
+	<p>
+		<%= f.label ("Model:") %>
+		<%= f.text_field :model %>
+	</p>
+	<p>
+		<%= f.label ("Color:") %>
+		<%= f.text_field :color %>
+	</p>
+	<p>
+		<%= f.label ("Selling Price:") %>
+		<%= f.text_field :selingPrice %>
+	</p>
+	<p>
+		<%= f.label ("Condition:") %>
+		<%= f.check_box :condition %>Good
+		<%= f.check_box :condition %>Damaged
+	</p>
+	<p>
+		<%= f.label ("Order No:") %>
+		<%= f.text_field :orderNo %>
+	</p>
+	<p>
+		<%= f.label ("Rack No:") %>
+		<%= f.text_field :rackNo %>
+	</p>
+	<br>
+		<%= f.submit ("Order") %>
+<% end %>
