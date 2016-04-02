@@ -1,5 +1,6 @@
 class ItemController < ApplicationController
   def index
+    @items = Item.all
   end
 
   def show
@@ -13,7 +14,7 @@ class ItemController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to item_path
+      redirect_to item_index_path
     end
   end
 
@@ -27,10 +28,14 @@ class ItemController < ApplicationController
   end
 
   def destroy
+    @item = Item.find(params[:id])
+    if @item.destroy
+      redirect_to item_index_path
+    end
   end
 
   private
   def item_params
-    params.require(:item).permit(:itemCode, :make, :model, :color, :selingPrice, :condition, :orderNo, :rackNo)
+    params.require(:item).permit(:itemCode, :make, :model, :color, :selingPrice, :condition, :orderNo, :rackNo, :itemPhoto)
   end
 end

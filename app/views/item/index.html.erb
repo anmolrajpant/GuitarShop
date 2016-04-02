@@ -2,3 +2,38 @@
 <p>Find me in app/views/item/index.html.erb</p>
 <%= link_to ('Add new item'), new_item_path %>
 <%= link_to ('New Order'), new_request_path %>
+<br>
+<h1><strong>List of Items</strong></h1>
+<table>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Manufacture</th>
+			<th>Model</th>
+			<th>Color</th>
+			<th>Price</th>
+			<th>Status</th>
+			<th>Order No.</th>
+			<th>Rack No.</th>
+		</tr>
+	</thead>
+	<tbody>
+	<div>
+		<% @items.each do |item| %>
+			<tr>
+				
+				<td><%= item.itemCode %></td>
+				<td><%= item.make %></td>
+				<td><%= item.model %></td>
+				<td><%= item.color %></td>
+				<td><%= item.selingPrice %></td>
+				<td><%= item.condition %></td>
+				<td><%= item.orderNo %></td>
+				<td><%= item.rackNo %></td>   
+				<td><%= link_to "View Detail", item %></td>
+				<td><%= link_to "Remove",item, method: :delete, data:{confirm: "Are you sure?"}%></td>
+			</tr>
+		<% end %>
+		</div>
+	</tbody>
+</table>
