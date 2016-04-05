@@ -1,22 +1,7 @@
 Rails.application.routes.draw do
-  get 'sell/index'
-
-  get 'sell/show'
-
-  get 'sell/new'
-
-  get 'sell/create'
-
-  get 'sell/edit'
-
-  get 'sell/update'
-
-  get 'sell/delete'
-
-  get 'sell/destroy'
-
   resources :item
   resources :request
+  resources :sell
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
