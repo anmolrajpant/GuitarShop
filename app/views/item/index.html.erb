@@ -21,7 +21,7 @@
 	<div>
 		<% @items.each do |item| %>
 			<tr>
-				
+				<td><%= image_tag item.image_url, size:"100x100" %></td>
 				<td><%= item.itemCode %></td>
 				<td><%= item.make %></td>
 				<td><%= item.model %></td>
