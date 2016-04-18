@@ -4,9 +4,10 @@
 <%= link_to ('New Order'), new_request_path %>
 <br>
 <h1><strong>List of Items</strong></h1>
-<table>
+<table class="table-table-striped">
 	<thead>
 		<tr>
+			<th></th>
 			<th>ID</th>
 			<th>Manufacture</th>
 			<th>Model</th>
@@ -17,7 +18,7 @@
 			<th>Rack No.</th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody class="table-table-striped">
 	<div>
 		<% @items.each do |item| %>
 			<tr>

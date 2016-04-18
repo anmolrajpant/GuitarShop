@@ -1,6 +1,9 @@
 <h1>Item#show</h1>
 <p>Find me in app/views/item/show.html.erb</p>
 Order Details
+<p>
+	<%= image_tag @item.image_url, size:"500x350" %>
+</p>
 <P>
 	<strong>Guitar ID:</strong><%= @item.itemCode %>
 </P>
