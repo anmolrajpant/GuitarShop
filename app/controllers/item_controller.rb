@@ -1,5 +1,5 @@
 class ItemController < ApplicationController
-  before_action :authenticate_admin, only: {:edit}
+  #before_action :authenticate_admin, only: {:edit}
   def index
     @items = Item.all
   end
