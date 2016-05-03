@@ -1,0 +1,32 @@
+<div id=" notice">
+	<p id="notice"><%= notice %></p>
+</div>
+<div id="itemindex">
+	  
+		  	<% @items.each do |item| %>
+		      
+		      <div class="caption">
+		      <%= image_tag item.image_url, size:"200x50" %>
+			        <h3><%= item.model %></h3>
+			        <p>
+			        	<strong>ID:</strong><%= item.uniqueID %><br>
+						<strong>Brand:</strong><%= item.make %><br>
+						<strong>Quanttity:</strong><%= item.quantity %><br>
+						<strong>Color:</strong><%= item.color %><br>
+						<strong>MRP:</strong>Rs.<%= item.sellingPrice %><br>
+						<strong>Rack No.:</strong><%= item.rackNo %>  
+			        </p>
+			        <p>
+				        <div class="btn btn-default" role="button">
+				        	<%= link_to "View Detail", item %>
+				        </div> 
+				        <div class="btn btn-default" role="button">
+				        	<%= link_to "Remove",item, method: :delete, data:{confirm: "Are you sure?"}%>
+				        </div>
+			        </p>
+			     
+		      </div>
+
+	  <% end %>
+</div>
+	

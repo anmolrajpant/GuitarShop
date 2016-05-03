@@ -1,0 +1,79 @@
+<div id="itemshow">
+	<div class="itemimage">
+		<%= image_tag @item.image_url, size:"250x150" %>
+	</div>
+	<div class="itemdetails">
+		<table class="table">
+			<tr>
+				<td>
+					ID:
+				</td>
+				<td>
+					<%= @item.uniqueID %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Brand:
+				</td>
+				<td>
+					<%= @item.make %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Model:
+				</td>
+				<td>
+					<%= @item.model %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Quantity:
+				</td>
+				<td>
+					<%= @item.quantity %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Color:
+				</td>
+				<td>
+					<%= @item.color %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					MRP:
+				</td>
+				<td>
+					Rs.<%= @item.sellingPrice %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Condition:
+				</td>
+				<td>
+					<%= @item.condition %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Rack NO.:
+				</td>
+				<td>
+					<%= @item.rackNo %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<%= link_to "Remove",@item, method: :delete, data:{confirm: "Are you sure?"}%>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+

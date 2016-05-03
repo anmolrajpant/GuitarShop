@@ -1,0 +1,26 @@
+<h1><strong>List of Orders</strong></h1>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>Supplier</th>
+			<th>Quantity</th>
+			<th>Price</th>
+			<th>Deliver Date</th>
+		</tr>
+	</thead>
+	<tbody>
+	<div class="order">
+		<% @orders.each do |order| %>
+			<tr>
+				<td><%= order.purchaseDate %></td>
+				<td><%= order.pruchaseCompany %></td>
+				<td><%= order.quantity %></td>
+				<td>Rs.<%= order.price %></td>
+				<td><%= order.deliveryDate %></td>
+				<td><%= link_to "Remove",order, method: :delete, data:{confirm: "Are you sure?"}%></td>
+			</tr>
+		<% end %>
+		</div>
+	</tbody>
+</table>

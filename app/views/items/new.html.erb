@@ -1,0 +1,80 @@
+<%= form_for @item, url: items_path do |f| %>
+<table class="table" style="width : 600px; margin-top: 50px; margin-left: 200px;">
+	<tr>
+		<td>
+			<%= f.label ("Guitar ID:") %>
+		</td>
+		<td>
+			<%= f.number_field :uniqueID %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= f.label ("Make:") %>
+		</td>
+		<td>
+			<%= f.text_field :make %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= f.label ("Model:") %>
+		</td>
+		<td>
+			<%= f.text_field :model %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= f.label ("Quantity:") %>
+		</td>
+		<td>
+			<%= f.number_field :quantity %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= f.label ("Color:") %>
+		</td>
+		<td>
+			<%= f.text_field :color %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= f.label ("Selling Price:") %>
+		</td>
+		<td>
+			<%= f.number_field :sellingPrice %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= f.label ("Condition:") %>
+		</td>
+		<td>
+			<%= f.check_box :condition %>Good
+			<%= f.check_box :condition %>Damaged
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= f.label ("Rack No:") %>
+		</td>
+		<td>
+			<%= f.number_field :rackNo %>
+		</td>
+	</tr>	
+	<tr>
+		<td>
+			<%= f.file_field :image %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= submit_tag ("Add") %>
+		</td>
+	</tr>
+	
+</table>
+<% end %>

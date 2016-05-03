@@ -1,0 +1,25 @@
+<div id="search">
+	<h2>
+		Search Result
+	</h2>
+	<% if @results %>
+  	<% @results.each do |item| %>
+  	<strong>Model:</strong><%= item.model %><br>
+	    	<div class="searchimg">
+	    		<%= image_tag item.image_url, size:"300x250" %>
+	    	</div>
+	    	<div class="searchtxt">
+	    		<strong>ID:</strong><%= item.uniqueID %><br>
+				<strong>Brand:</strong><%= item.make %><br>
+				
+				<strong>Color:</strong><%= item.color %><br>
+				<strong>MRP:</strong>Rs.<%= item.sellingPrice %><br>
+				<strong>Rack No.:</strong><%= item.rackNo %><br><br>
+	    	</div>
+	<% end %>
+	<% else %>
+  		<tr>
+		  Product not found!
+	  	</tr>
+	<% end %>
+</div>

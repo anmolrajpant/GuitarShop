@@ -1,0 +1,52 @@
+<%= form_for :order, url: {action: "create"} do |f| %>
+<table class="table" style="width : 500px; margin-top: 50px; margin-left: 250px;">
+		<tr>
+			<td>
+				<%= f.label ("Date:") %>
+			</td>
+			<td>
+				<%= f.date_select :purchaseDate %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label ("Supplier's Name:") %>
+			</td>
+			<td>
+				<%= f.text_field :pruchaseCompany %>
+			</td>
+		</tr>
+			
+		<tr>
+			<td>
+				<%= f.label ("Quantity:") %>
+			</td>
+			<td>
+				<%= f.number_field :quantity %>
+			</td>
+		</tr>
+			
+		<tr>
+			<td>
+				<%= f.label ("Total Cost:") %>
+			</td>
+			<td>
+				<%= f.number_field :price %>
+			</td>
+		</tr>	
+			
+		<tr>
+			<td>
+				<%= f.label ("Delivery Date:") %>
+			</td>
+			<td>
+				<%= f.date_select :deliveryDate %>
+			</td>
+		</tr>		
+		<tr>	
+			<td>
+					<%= f.submit ("Order") %>
+			</td>		
+		</tr>	
+</table>
+<% end %>

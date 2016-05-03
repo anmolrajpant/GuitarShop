@@ -11,9 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425122153) do
+ActiveRecord::Schema.define(version: 20160426102740) do
 
-  create_table "admins", force: :cascade do |t|
+  create_table "items", force: :cascade do |t|
+    t.integer  "uniqueID"
+    t.string   "make"
+    t.string   "model"
+    t.integer  "quantity"
+    t.string   "color"
+    t.integer  "sellingPrice"
+    t.string   "condition"
+    t.integer  "rackNo"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "image"
+    t.integer  "user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.date     "purchaseDate"
+    t.string   "pruchaseCompany"
+    t.integer  "quantity"
+    t.integer  "price"
+    t.date     "deliveryDate"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -26,65 +52,6 @@ ActiveRecord::Schema.define(version: 20160425122153) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-  end
-
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-
-  create_table "items", force: :cascade do |t|
-    t.integer  "itemCode"
-    t.string   "make"
-    t.string   "model"
-    t.string   "color"
-    t.integer  "selingPrice"
-    t.boolean  "condition"
-    t.string   "orderNo"
-    t.integer  "rackNo"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "itemPhoto"
-    t.string   "image"
-    t.string   "user"
-    t.string   "admin"
-  end
-
-  create_table "requests", force: :cascade do |t|
-    t.integer  "orderNo"
-    t.date     "purchaseDate"
-    t.string   "companyName"
-    t.integer  "quantity"
-    t.integer  "cost"
-    t.date     "deliveryDate"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.string   "admin"
-  end
-
-  create_table "sells", force: :cascade do |t|
-    t.date     "date"
-    t.string   "customerName"
-    t.string   "customerAddress"
-    t.integer  "contact"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "user"
-    t.string   "admin"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
